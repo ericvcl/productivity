@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import './App.css';
 import { Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
 import TaskCol from './TaskCol';
 
 function App() {
@@ -91,7 +92,7 @@ function App() {
       <main>
         <Container>
           <Row>
-            <Col xs={4}>
+            <Col>
               <TaskCol
               tasks={tasks}
               addEmptyTask={addEmptyTask}
@@ -101,7 +102,7 @@ function App() {
               status="Backlog"
               />
             </Col>
-            <Col xs={4}>
+            <Col>
               <TaskCol
               tasks={tasks}
               addEmptyTask={addEmptyTask}
@@ -111,7 +112,7 @@ function App() {
               status="In Progress"
               />
             </Col>
-            <Col xs={4}>
+            <Col>
               <TaskCol
               tasks={tasks}
               addEmptyTask={addEmptyTask}

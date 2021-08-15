@@ -1,4 +1,5 @@
 import Task from "./Task";
+//import "./styles/statusLine.scss";
 
 export default function TaskCol(props) {
   const { status, tasks, addTask, deleteTask, addEmptyTask, moveTask } = props;
@@ -33,7 +34,7 @@ export default function TaskCol(props) {
     <div className="statusLine">
       <h3>{status}</h3>
       {taskList}
-      <button onClick={handleAddEmpty} className="button addTask">
+      <button onClick={handleAddEmpty} className="button addTask mt-1">
         +
       </button>
     </div>

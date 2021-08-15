@@ -2,9 +2,20 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task {
+  border: 1px solid black;
+  border-radius: 0.25rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.collapsed > input {
+  font-weight: bold;
+  text-align: center;
+  background-color: transparent;
+  /*border: 1px solid transparent;*/
 }
 
 @media (prefers-reduced-motion: no-preference) {
