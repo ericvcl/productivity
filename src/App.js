@@ -88,7 +88,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>ProEfficiency</h1>
+      <h1 class="app-name mt-3 mb-3"> ProEfficiency </h1>
+      <h2>Tasks:</h2>
       <main>
         <Container>
           <Row>

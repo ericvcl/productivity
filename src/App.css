@@ -2,9 +2,33 @@
   text-align: center;
 }
 
+.app-name {
+  border: 2px solid black;
+  /*border-radius: 0.25rem;*/
+  display: inline-block;
+  padding-right: .1em;
+  padding-left: .1em;
+  transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
+  box-shadow: 10px 5px #0d6dfd94;
+}
+
+.app-name:hover {
+  /*border-radius: 0.25rem;*/
+  display: inline-block;
+  transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
+  box-shadow: 14px 6px #0d6efd;
+}
+
 .task {
   border: 1px solid black;
-  border-radius: 0.25rem;
+  /*border-radius: 0.25rem;*/
+  transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
+  box-shadow: 10px 5px #0d6dfd94;
+}
+
+.task:hover {
+  transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
+  box-shadow: 14px 6px #0d6efd;
 }
 
 .hidden {
@@ -16,6 +40,20 @@
   text-align: center;
   background-color: transparent;
   /*border: 1px solid transparent;*/
+}
+
+.status-title {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/*.button-lr {
+  margin-right: .2rem;
+  margin-left: .2rem;
+}*/
+.task-title {
+  font-weight: 700;
+  text-align: left;
 }
 
 .desc {

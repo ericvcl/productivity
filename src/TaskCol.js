@@ -1,5 +1,7 @@
 import Task from "./Task";
 //import "./styles/statusLine.scss";
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function TaskCol(props) {
   const { status, tasks, addTask, deleteTask, addEmptyTask, moveTask } = props;
@@ -32,11 +34,11 @@ export default function TaskCol(props) {
 
   return (
     <div className="statusLine">
-      <h3>{status}</h3>
+      <h3 className="status-title">{status}</h3>
       {taskList}
-      <button onClick={handleAddEmpty} className="button addTask mt-1">
+      <Button onClick={handleAddEmpty} className="button addTask mt-1">
         +
-      </button>
+      </Button>
     </div>
   );
 }

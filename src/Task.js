@@ -1,6 +1,6 @@
 import { useState } from "react";
 //import "./styles/task.scss";
-import { Container, Row, Col, Button, Form} from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, ButtonGroup, Accordion } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Task(props) {
@@ -73,40 +73,51 @@ export default function Task(props) {
     }
 
     return (
-        <Container className={`task ${collapsed ? "collapsedTask" : ""}`}>
+        <Container className={`task mb-2 ${collapsed ? "collapsedTask" : ""}`}>
             <Row className="mt-2 mb-3">
                 <Col xs={12}>
-                    <h4>{task.title}</h4>
-                    <p className="desc">Priority: {task.urgency} <br></br> {task.description}</p>
+                    <h4 className="task-title">{task.title}</h4>
+                    <Accordion defaultActiveKey="0" className={`${!collapsed ? "hidden" : ""}`}>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header>Details</Accordion.Header>
+                            <Accordion.Body>
+                                Priority: {task.urgency} 
+                                <br></br>
+                                Description: {task.description}
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
                 </Col>
-                    <Col xs={12} className="">
-                        <Form onSubmit={handleSubmit} className={collapsed ? "collapsed" : ""}>
-                            <Form.Control
-                                type="text"
-                                className={`title input ${collapsed ? "hidden" : ""}`}
-                                placeholder="Task Title.."
-                                name="title"
-                            />
-                            <Form.Control
-                                as="textarea"
-                                className={`title input ${collapsed ? "hidden" : ""}`}
-                                placeholder="Task Description.."
-                                rows={2}
-                                name="description"
-                            />
-                            <Form.Select onChange={setUrgency} name="urgency" className={`${collapsed ? "hidden" : ""}`} aria-label="Default select example">
-                                <option>Task Priority..</option>
-                                <option value="low">Low</option>
-                                <option value="medium">Medium</option>
-                                <option value="high">High</option>
-                            </Form.Select>
+                <Col xs={12}>
+                    <Form onSubmit={handleSubmit} className={collapsed ? "collapsed" : ""}>
+                        <Form.Control
+                            type="text"
+                            className={`title input ${collapsed ? "hidden" : ""}`}
+                            placeholder="Task Title.."
+                            name="title"
+                        />
+                        <Form.Control
+                            as="textarea"
+                            className={`title input ${collapsed ? "hidden" : ""}`}
+                            placeholder="Task Description.."
+                            rows={2}
+                            name="description"
+                        />
+                        <Form.Select onChange={setUrgency} name="urgency" className={`${collapsed ? "hidden" : ""}`} aria-label="Default select example">
+                            <option>Task Priority..</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </Form.Select>
+                        <ButtonGroup>
                             <Button
                                 onClick={() => {
                                     setFormAction("save");
                                 }}
-                                className="button mt-3"
+                                className="button mt-1 mr-2"
                                 type="submit"
                                 size="sm"
+                                variant="primary"
                             >
                                 {collapsed ? "Edit" : "Save"}
                             </Button>
@@ -115,15 +126,17 @@ export default function Task(props) {
                                     onClick={() => {
                                         setFormAction("delete");
                                     }}
-                                    className="delete delete mt-3 ml-5"
+                                    className="delete mt-1"
                                     type="submit"
                                     size="sm"
+                                    variant="primary"
                                 >
                                     Delete
                                 </Button>
                             )}
-                        </Form>
-                        {/*<Form onSubmit={handleSubmit} className={collapsed ? "collapsed" : ""}>
+                        </ButtonGroup>
+                    </Form>
+                    {/*<Form onSubmit={handleSubmit} className={collapsed ? "collapsed" : ""}>
                         <Row>
                             <Col>
                                 <input
@@ -197,19 +210,21 @@ export default function Task(props) {
                             )}
                         </Row>
                                 </Form>*/}
-                    </Col>
-                    <Col className="">
+                </Col>
+                <Col>
+                    <ButtonGroup>
                         {collapsed && (
-                            <Button onClick={handleMoveLeft} size="sm" className="button moveTask mr-1 mt-1">
+                            <Button onClick={handleMoveLeft} size="sm" className="button-lr moveTask mr-1 mt-1" variant="secondary">
                                 &#171;
                             </Button>
                         )}
                         {collapsed && (
-                            <Button size="sm" onClick={handleMoveRight} className="button moveTask ml-1 mt-1">
+                            <Button size="sm" onClick={handleMoveRight} className="button-lr moveTask ml-1 mt-1" variant="secondary">
                                 &#187;
                             </Button>
                         )}
-                    </Col>
+                    </ButtonGroup>
+                </Col>
             </Row>
             {/*<div className={`task ${collapsed ? "collapsedTask" : ""}`}>
                 <button onClick={handleMoveLeft} className="button moveTask">
