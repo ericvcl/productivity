@@ -8,6 +8,7 @@
   display: inline-block;
   padding-right: .1em;
   padding-left: .1em;
+  margin-left: 45px;
   transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
   box-shadow: 10px 5px #0d6dfd94;
 }
@@ -16,7 +17,7 @@
   /*border-radius: 0.25rem;*/
   display: inline-block;
   transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
-  box-shadow: 14px 6px #0d6efd;
+  box-shadow: 14px 6px #0d6dfdb7;
 }
 
 .task {
@@ -28,7 +29,7 @@
 
 .task:hover {
   transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
-  box-shadow: 14px 6px #0d6efd;
+  box-shadow: 14px 6px #0d6dfdb7;
 }
 
 .hidden {
@@ -45,6 +46,20 @@
 .status-title {
   font-weight: 600;
   font-size: 20px;
+}
+
+
+.timer {
+  font-size: xx-large;
+  display: inline-block;
+  margin-left: 1rem;
+  transition: .3s transform cubic-bezier(.25,.1,.25,1), .2s color;
+  color: black;
+}
+
+.timer:hover {
+  transition: .3s transform cubic-bezier(.25,.1,.25,1), .2s color;
+  color: #0d6dfdb7;
 }
 
 /*.button-lr {

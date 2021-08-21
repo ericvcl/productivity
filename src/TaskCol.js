@@ -1,6 +1,6 @@
 import Task from "./Task";
 //import "./styles/statusLine.scss";
-import { Button } from 'react-bootstrap';
+import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function TaskCol(props) {
@@ -36,9 +36,11 @@ export default function TaskCol(props) {
     <div className="statusLine">
       <h3 className="status-title">{status}</h3>
       {taskList}
-      <Button onClick={handleAddEmpty} className="button addTask mt-1">
-        +
-      </Button>
-    </div>
+      <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip-disabled">Create New Task</Tooltip>}>
+        <Button onClick={handleAddEmpty} className="button addTask mt-1">
+          +
+        </Button>
+      </OverlayTrigger>
+    </div >
   );
 }

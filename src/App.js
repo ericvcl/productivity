@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStopwatch } from '@fortawesome/free-solid-svg-icons'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import TaskCol from './TaskCol';
@@ -89,38 +91,42 @@ function App() {
   return (
     <div className="App">
       <h1 class="app-name mt-3 mb-3"> ProEfficiency </h1>
-      <h2>Tasks:</h2>
+      <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip-disabled">Start New Pomodoro Timer</Tooltip>}>
+        <div className="timer">
+          <FontAwesomeIcon icon={faStopwatch} />
+        </div>
+      </OverlayTrigger>
       <main>
         <Container>
           <Row>
             <Col>
               <TaskCol
-              tasks={tasks}
-              addEmptyTask={addEmptyTask}
-              addTask={addTask}
-              deleteTask={deleteTask}
-              moveTask={moveTask}
-              status="Backlog"
+                tasks={tasks}
+                addEmptyTask={addEmptyTask}
+                addTask={addTask}
+                deleteTask={deleteTask}
+                moveTask={moveTask}
+                status="Backlog"
               />
             </Col>
             <Col>
               <TaskCol
-              tasks={tasks}
-              addEmptyTask={addEmptyTask}
-              addTask={addTask}
-              deleteTask={deleteTask}
-              moveTask={moveTask}
-              status="In Progress"
+                tasks={tasks}
+                addEmptyTask={addEmptyTask}
+                addTask={addTask}
+                deleteTask={deleteTask}
+                moveTask={moveTask}
+                status="In Progress"
               />
             </Col>
             <Col>
               <TaskCol
-              tasks={tasks}
-              addEmptyTask={addEmptyTask}
-              addTask={addTask}
-              deleteTask={deleteTask}
-              moveTask={moveTask}
-              status="Done"
+                tasks={tasks}
+                addEmptyTask={addEmptyTask}
+                addTask={addTask}
+                deleteTask={deleteTask}
+                moveTask={moveTask}
+                status="Complete"
               />
             </Col>
           </Row>
