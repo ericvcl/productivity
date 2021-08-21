@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/productivity/static/css/main.09c63764.chunk.css",
-    "main.js": "/productivity/static/js/main.3bb39bbe.chunk.js",
-    "main.js.map": "/productivity/static/js/main.3bb39bbe.chunk.js.map",
+    "main.css": "/productivity/static/css/main.be6cce17.chunk.css",
+    "main.js": "/productivity/static/js/main.f29b71d1.chunk.js",
+    "main.js.map": "/productivity/static/js/main.f29b71d1.chunk.js.map",
     "runtime-main.js": "/productivity/static/js/runtime-main.85a7f5ac.js",
     "runtime-main.js.map": "/productivity/static/js/runtime-main.85a7f5ac.js.map",
     "static/css/2.da1eef19.chunk.css": "/productivity/static/css/2.da1eef19.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.7970acee.chunk.js.map": "/productivity/static/js/2.7970acee.chunk.js.map",
     "index.html": "/productivity/index.html",
     "static/css/2.da1eef19.chunk.css.map": "/productivity/static/css/2.da1eef19.chunk.css.map",
-    "static/css/main.09c63764.chunk.css.map": "/productivity/static/css/main.09c63764.chunk.css.map",
+    "static/css/main.be6cce17.chunk.css.map": "/productivity/static/css/main.be6cce17.chunk.css.map",
     "static/js/2.7970acee.chunk.js.LICENSE.txt": "/productivity/static/js/2.7970acee.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.85a7f5ac.js",
     "static/css/2.da1eef19.chunk.css",
     "static/js/2.7970acee.chunk.js",
-    "static/css/main.09c63764.chunk.css",
-    "static/js/main.3bb39bbe.chunk.js"
+    "static/css/main.be6cce17.chunk.css",
+    "static/js/main.f29b71d1.chunk.js"
   ]
 }
