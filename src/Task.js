@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import "./styles/task.scss";
 import { Container, Row, Col, Button, Form, ButtonGroup, Accordion } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,9 +10,7 @@ export default function Task(props) {
     const [formAction, setFormAction] = useState("");
 
     function setUrgency(event) {
-        //setUrgencyLevel(event.target.attributes.urgency.value);
         setUrgencyLevel(event.target.options[event.target.options.selectedIndex].value);
-        //console.log(event.target.options[event.target.options.selectedIndex].value);
     }
 
     function handleSubmit(event) {
@@ -23,7 +20,6 @@ export default function Task(props) {
             if (collapsed) {
                 setCollapsed(false);
             } else {
-                //console.log(event.target.elements.title);
                 let newTask = {
                     id: task.id,
                     title: event.target.elements.title.value,
@@ -136,80 +132,6 @@ export default function Task(props) {
                             )}
                         </ButtonGroup>
                     </Form>
-                    {/*<Form onSubmit={handleSubmit} className={collapsed ? "collapsed" : ""}>
-                        <Row>
-                            <Col>
-                                <input
-                                    type="text"
-                                    className={`title input ${collapsed ? "hidden" : ""}`}
-                                    name="title"
-                                    placeholder="Enter Title"
-                                    disabled={collapsed}
-                                    defaultValue={task.title}
-                                />
-                                <textarea
-                                    rows="2"
-                                    className={`description input ${collapsed ? "hidden" : ""}`}
-                                    name="description"
-                                    placeholder="Enter Description"
-                                    defaultValue={task.description}
-                                />
-                            </Col>
-                            <div className={`urgencyLables ${collapsed ? "hidden" : ""}`}>
-                                <label className={`low ${urgencyLevel === "low" ? "selected" : ""}`}>
-                                    <input
-                                        urgency="low"
-                                        onChange={setUrgency}
-                                        type="radio"
-                                        name="urgency"
-                                    />
-                                    low
-                                </label>
-                                <label
-                                    className={`medium ${urgencyLevel === "medium" ? "selected" : ""}`}
-                                >
-                                    <input
-                                        urgency="medium"
-                                        onChange={setUrgency}
-                                        type="radio"
-                                        name="urgency"
-                                    />
-                                    medium
-                                </label>
-                                <label
-                                    className={`high ${urgencyLevel === "high" ? "selected" : ""}`}
-                                >
-                                    <input
-                                        urgency="high"
-                                        onChange={setUrgency}
-                                        type="radio"
-                                        name="urgency"
-                                    />
-                                    high
-                                </label>
-                            </div>
-                            <Button
-                                onClick={() => {
-                                    setFormAction("save");
-                                }}
-                                className="button mt-3"
-                                type="submit"
-                            >
-                                {collapsed ? "Edit" : "Save"}
-                            </Button>
-                            {collapsed && (
-                                <Button
-                                    onClick={() => {
-                                        setFormAction("delete");
-                                    }}
-                                    className="button delete mt-3"
-                                    type="submit"
-                                >
-                                    X
-                                </Button>
-                            )}
-                        </Row>
-                                </Form>*/}
                 </Col>
                 <Col>
                     <ButtonGroup>
@@ -226,82 +148,6 @@ export default function Task(props) {
                     </ButtonGroup>
                 </Col>
             </Row>
-            {/*<div className={`task ${collapsed ? "collapsedTask" : ""}`}>
-                <button onClick={handleMoveLeft} className="button moveTask">
-                    &#171;
-                </button>
-                <form onSubmit={handleSubmit} className={collapsed ? "collapsed" : ""}>
-                    <input
-                        type="text"
-                        className="title input"
-                        name="title"
-                        placeholder="Enter Title"
-                        disabled={collapsed}
-                        defaultValue={task.title}
-                    />
-                    <textarea
-                        rows="2"
-                        className="description input"
-                        name="description"
-                        placeholder="Enter Description"
-                        defaultValue={task.description}
-                    />
-                    <div className="urgencyLabels">
-                        <label className={`low ${urgencyLevel === "low" ? "selected" : ""}`}>
-                            <input
-                                urgency="low"
-                                onChange={setUrgency}
-                                type="radio"
-                                name="urgency"
-                            />
-                            low
-                        </label>
-                        <label
-                            className={`medium ${urgencyLevel === "medium" ? "selected" : ""}`}
-                        >
-                            <input
-                                urgency="medium"
-                                onChange={setUrgency}
-                                type="radio"
-                                name="urgency"
-                            />
-                            medium
-                        </label>
-                        <label
-                            className={`high ${urgencyLevel === "high" ? "selected" : ""}`}
-                        >
-                            <input
-                                urgency="high"
-                                onChange={setUrgency}
-                                type="radio"
-                                name="urgency"
-                            />
-                            high
-                        </label>
-                    </div>
-                    <button
-                        onClick={() => {
-                            setFormAction("save");
-                        }}
-                        className="button"
-                    >
-                        {collapsed ? "Edit" : "Save"}
-                    </button>
-                    {collapsed && (
-                        <button
-                            onClick={() => {
-                                setFormAction("delete");
-                            }}
-                            className="button delete"
-                        >
-                            X
-                        </button>
-                    )}
-                </form>
-                <button onClick={handleMoveRight} className="button moveTask">
-                    &#187;
-                </button>
-            </div>*/}
         </Container>
     );
 }

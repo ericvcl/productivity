@@ -4,7 +4,6 @@
 
 .app-name {
   border: 2px solid black;
-  /*border-radius: 0.25rem;*/
   display: inline-block;
   padding-right: .1em;
   padding-left: .1em;
@@ -14,7 +13,6 @@
 }
 
 .app-name:hover {
-  /*border-radius: 0.25rem;*/
   display: inline-block;
   transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
   box-shadow: 14px 6px #0d6dfdb7;
@@ -22,7 +20,6 @@
 
 .task {
   border: 1px solid black;
-  /*border-radius: 0.25rem;*/
   transition: .3s transform cubic-bezier(.25,.1,.25,1), .3s box-shadow;
   box-shadow: 10px 5px #0d6dfd94;
 }

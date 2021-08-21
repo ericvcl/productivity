@@ -1,5 +1,4 @@
 import Task from "./Task";
-//import "./styles/statusLine.scss";
 import { Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
