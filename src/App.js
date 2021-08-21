@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStopwatch } from '@fortawesome/free-solid-svg-icons'
+import { Container, Row, Col} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import TaskCol from './TaskCol';
+import TimerModal from "./TimerModal";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -90,12 +89,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1 class="app-name mt-3 mb-3"> ProEfficiency </h1>
-      <OverlayTrigger placement="bottom" overlay={<Tooltip id="tooltip-disabled">Start New Pomodoro Timer</Tooltip>}>
-        <div className="timer">
-          <FontAwesomeIcon icon={faStopwatch} />
-        </div>
-      </OverlayTrigger>
+      <h1 className="app-name mt-3 mb-3"> ProEfficiency </h1>
+      <TimerModal/>
       <main>
         <Container>
           <Row>
