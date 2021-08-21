@@ -5,6 +5,7 @@ import {
     ButtonGroup,
     Col,
     Row,
+    FloatingLabel
 } from 'react-bootstrap';
 import "./App.css";
 
@@ -30,8 +31,12 @@ export default function Pomodoro() {
     }
 
     function handleReset() {
+        setStart(false);
         setMinutes(25);
-        setSeconds(0);
+        setDisplayMessage(false);
+        setTimeout(() => {
+            setSeconds(0);
+        }, 1005);
     }
     function handleStart() {
         setStart(true);
@@ -47,7 +52,7 @@ export default function Pomodoro() {
                         setSeconds(59)
                         setMinutes(minutes - 1)
                     } else {
-                        let minutes = displayMessage ? 24 : breakTime - 1
+                        let minutes = displayMessage ? minutes - 1 : breakTime - 1
                         let seconds = 59
 
                         setSeconds(seconds)
@@ -68,7 +73,8 @@ export default function Pomodoro() {
         <>
             <div className="pomodoro">
                 <div className="message">
-                    {displayMessage && <div>Break time! New session starts in:</div>}
+                    {displayMessage && <div>Time for a break, good job!</div>}
+                    {displayMessage && <div>New session starts in:</div>}
                 </div>
                 <div className="timer">
                     {timerMinutes}:{timerSeconds}
@@ -77,18 +83,28 @@ export default function Pomodoro() {
             <Form onSubmit={handleSubmit}>
                 <Row className="justify-content-md-center">
                     <Col sm={8} className="justify-content-center">
-                        <Form.Control
-                            type="text"
-                            className={`title input`}
-                            placeholder="Session minutes.. (default: 25)"
-                            name="session"
-                        />
-                        <Form.Control
-                            type="text"
-                            className={`title input mt-2`}
-                            placeholder="Break minutes.. (default: 5)"
-                            name="break"
-                        />
+                        <Form.Floating>
+                            <Form.Control
+                                id="floatinSessionCustom"
+                                placeholder="Password"
+                                type="text"
+                                className={`title input`}
+                                placeholder="Session minutes (default: 25)"
+                                name="session"
+                            />
+                            <label className="label" htmlFor="floatingSessionCustom">Session minutes (default: 25)</label>
+                        </Form.Floating>
+                        <Form.Floating>
+                            <Form.Control
+                                id="floatinSessionCustom"
+                                placeholder="Password"
+                                type="text"
+                                className={`title input mt-2`}
+                                placeholder="Break minutes (default: 5)"
+                                name="break"
+                            />
+                            <label className="label" htmlFor="floatingSessionCustom">Break minutes (default: 5)</label>
+                        </Form.Floating>
                     </Col>
                 </Row>
                 <Col className="d-flex justify-content-center mt-2">
@@ -117,17 +133,17 @@ export default function Pomodoro() {
                     </ButtonGroup>
                 </Col>
                 <Col className="d-flex justify-content-center">
-                <Button
-                    onClick={() => {
-                        handleStart()
-                    }}
-                    className="d-flex justify-content-center mt-2"
-                    type="button"
-                    size="sm"
-                    variant="primary"
-                >
-                    Start Timer
-                </Button>
+                    <Button
+                        onClick={() => {
+                            handleStart()
+                        }}
+                        className="d-flex justify-content-center mt-2"
+                        type="button"
+                        size="sm"
+                        variant="primary"
+                    >
+                        Start Timer
+                    </Button>
                 </Col>
             </Form>
         </>
